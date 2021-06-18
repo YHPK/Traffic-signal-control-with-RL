@@ -33,14 +33,29 @@ system for network traffic signal control**](http://citeseerx.ist.psu.edu/viewdo
 
 ## RL Setting
 ### State
+
+- the state is represented by an eight-dimensional feature vector 
+  with each element representing the **relative traffic flow** at one of the lanes.
+
+- the state space size of five-intersection environment is 40(# of lanes in intersections * # of intersections)
+
 #### relative traffic flow
 
 <img src="https://render.githubusercontent.com/render/math?math=\text{relative traffic flow} = \frac{\text{the total delay of vehicles in a lane}}{\text{the average delay at all lanes in the intersection}}">
 
+
+
 ### Action
 <img src="./fig/Actions.png">
 
+- the maximal number of applicable, compatible and non-conflicting phase combinations is 
+  eight for each isolated intersection presented **{(1,5), (1,6), (2,5), (2,6), (3,7), (3,8), (4,7), (4,8)}**.
+
+- the action space size is 8
+
+
 ### Reward
+<img src="https://render.githubusercontent.com/render/math?math=r = D_{last} - D_{currnet}">
 
 ## Result
 
