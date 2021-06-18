@@ -20,20 +20,20 @@ pip install -r requirements.txt
 python main.py <optins>
 ```
 #### options
-| options                  | type    | help                                                                         |
-|--------------------------|:-------:|------------------------------------------------------------------------------|
-| `--episode`              | `int`   | number of maximum episode                                                    |
-| `--max_step`             | `int`   | number of maximum step in single episode                                     |
-| `--batch_size`           | `int`   | [for dqn] batch size                                                         |
-| `--gpu_num`              | `int`   | GPU number to use                                                            |
-| `--lr`                   | `float` | learning rate                                                                |
-| `--gamma`                | `float` | discount factor                                                              |
-| `--epsilon`              | `float` | [for dqn] e-greedy parameter                                                 |
-| `--traffic_change_time`  | `int`   | the traffic light changes every `n` steps.                                   |
-| `--average_arrival_rate` | `int`   | vehicle generation ratio                                                     |
-| `--algo_type`            | `str`   | The type of algorithm used by the agent.  choice from `dqn`, `a2c` and `lqf` |
-| `--render_type`          | `str`   | visualize the state of intersection. choice from `print` and `reder`         |
-| `--log_save_path`        | `str`   | path to save log                                                             |
+| options                  | default | type    | help                                                                         |
+|--------------------------|:-------:|:-------:|------------------------------------------------------------------------------|
+| `--episode`              | `1500`  | `int`   | number of maximum episode                                                    |
+| `--max_step`             | `2000`  | `int`   | number of maximum step in single episode                                     |
+| `--batch_size`           | `128`   | `int`   | [for dqn] batch size                                                         |
+| `--gpu_num`              | `0`     | `int`   | GPU number to use                                                            |
+| `--lr`                   | `0.1`   | `float` | learning rate                                                                |
+| `--gamma`                | `0.99`  | `float` | discount factor                                                              |
+| `--epsilon`              | `0.05`  | `float` | [for dqn] e-greedy parameter                                                 |
+| `--traffic_change_time`  | `20`    | `int`   | the traffic light changes every `n` steps.                                   |
+| `--average_arrival_rate` | `0.1`   | `int`   | vehicle generation ratio                                                     |
+| `--algo_type`            | `lqf`   | `str`   | The type of algorithm used by the agent.  choice from `dqn`, `a2c` and `lqf` |
+| `--render_type`          | `None`  | `str`   | visualize the state of intersection. choice from `print` and `reder`         |
+| `--log_save_path`        | `./`    | `str`   | path to save log                                                             |
 
 
 ## Environment Setting
@@ -87,5 +87,18 @@ python main.py <optins>
 <img src="https://render.githubusercontent.com/render/math?math=r = D_{last} - D_{currnet}">
 
 ## Result
+### environment setting
+```bash
+env: five intersection
+traffic change time: 20
+average arrival rate: 0.1
+```
+#### A2C
+<img src="./fig/a2c_reward.png" width="800" height="400">
 
+#### DQN
+<img src="./fig/dqn_reward.png" width="800" height="400">
+
+### LQF
+<img src="./fig/lqf_reward.png" width="800" height="400">
 

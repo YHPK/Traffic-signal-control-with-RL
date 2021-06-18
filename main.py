@@ -61,7 +61,7 @@ if __name__ == '__main__':
     parser.add_argument('--epsilon', type=float, default=0.05)
 
     parser.add_argument('--traffic_change_time', type=int, default=20)
-    parser.add_argument('--average_arrival_time', type=float, default=0.1)
+    parser.add_argument('--average_arrival_rate', type=float, default=0.1)
     parser.add_argument('--algo_type', type=str, default='lqf', choices=['lqf', 'dqn', 'a2c'])
     parser.add_argument('--render_type', type=str, default=None, choices=['print', 'draw'])
     parser.add_argument('--log_save_path', type=str, default='.')
