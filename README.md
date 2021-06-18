@@ -4,7 +4,36 @@ This work based on [**Reinforcement learning-based multi-agent
 system for network traffic signal control**](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.232.9789&rep=rep1&type=pdf)
 
 ## Training Code
+### Environment prepare
+this code verified on python=3.6 and cuda=10.2 setting.  
 
+```bash
+conda env create -f environment.yml
+```
+or
+```bash
+pip install -r requirements.txt
+```
+
+### Run
+```bash
+python main.py <optins>
+```
+#### options
+| options                  | type    | help                                                                         |
+|--------------------------|:-------:|------------------------------------------------------------------------------|
+| `--episode`              | `int`   | number of maximum episode                                                    |
+| `--max_step`             | `int`   | number of maximum step in single episode                                     |
+| `--batch_size`           | `int`   | [for dqn] batch size                                                         |
+| `--gpu_num`              | `int`   | GPU number to use                                                            |
+| `--lr`                   | `float` | learning rate                                                                |
+| `--gamma`                | `float` | discount factor                                                              |
+| `--epsilon`              | `float` | [for dqn] e-greedy parameter                                                 |
+| `--traffic_change_time`  | `int`   | the traffic light changes every `n` steps.                                   |
+| `--average_arrival_rate` | `int`   | vehicle generation ratio                                                     |
+| `--algo_type`            | `str`   | The type of algorithm used by the agent.  choice from `dqn`, `a2c` and `lqf` |
+| `--render_type`          | `str`   | visualize the state of intersection. choice from `print` and `reder`         |
+| `--log_save_path`        | `str`   | path to save log                                                             |
 
 
 ## Environment Setting
