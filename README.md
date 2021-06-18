@@ -16,7 +16,7 @@ system for network traffic signal control**](http://citeseerx.ist.psu.edu/viewdo
 ### State
 
 ### Action
-<img src="./fig/Actions.png" width="400" height="400">
+<img src="./fig/Actions.png">
 ### Reward
 
 ## Result
